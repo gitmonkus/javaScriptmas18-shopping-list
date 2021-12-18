@@ -1,0 +1,143 @@
+:root {
+  --wine-red: #C7375F;
+  --bright-red: #D42D2F;
+  --dark-green: #344D2F;
+  --light-green: #77A047;
+  --gold: #FAC57D;
+  --snow: #F0F4F7;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: var(--bright-red);
+    background: url(img/xmas.jpg) no-repeat;
+    background-size: cover;
+    font-family: 'Mountains of Christmas', cursive;
+}
+
+.checklist {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--dark-green);
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    flex-direction: column;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 5ch;
+    padding: 1em 2em;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    margin: 0.5em;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+
+input[type=checkbox] {
+  appearance: none;
+  background: var(--snow);
+  margin: 0;
+  width: 50px;
+  height: 60px;
+  border: 2px solid var(--light-green);
+  outline: none;
+}
+
+input[type=checkbox]:checked.Candy {
+    background: url(img/candy.png) no-repeat;
+    background-size: cover;
+    border: 2px dashed var(--bright-red);
+}
+input[type=checkbox]:checked.Present {
+    background: url(img/gift.png) no-repeat;
+    background-size: cover;
+    border: 2px dashed var(--bright-red);
+
+}
+input[type=checkbox]:checked.Mistletoe {
+    background: url(img/mistle.png) no-repeat;
+    background-size: cover;
+    border: 2px dashed var(--bright-red);
+
+}
+input[type=checkbox]:checked.Stocking {
+    background: url(img/stocking.png) no-repeat;
+    background-size: cover;
+    border: 2px dashed var(--bright-red);
+
+}
+
+.custom-checkbox {
+    font-size: 20px;
+}
+
+input[type=checkbox]:checked + label.strikethrough span{
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+.main-container {
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    top: 13%;
+    right: -10%;
+    border: none;
+    width: 80px; 
+    height: 80px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--snow);
+    text-shadow: 2px 2px 1px var(--bright-red);
+    background: url(img/gift.png) no-repeat;
+    background-size: cover;
+}
+.btn:focus,
+.btn:hover {
+    outline: none;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+/* Task:
+- Write the CSS to create custom checkboxes for our shopping list.
+
+Stretch goals: 
+- Add a different random check for each item.
+- Use JavaScript to match the custom check to the item listed, e.g. socks would have socks as the checkmark. */
+
+@keyframes button {
+    0% {
+        transform: rotateZ(10deg);
+    }
+    50% {
+        transform: rotateZ(-10deg)
+    } 
+    100% {
+        transform: rotateZ(10deg);
+    }
+}
